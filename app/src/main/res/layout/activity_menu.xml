@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.LoginActivity">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="99dp"
+        android:layout_height="72dp"
+        android:fontFamily="@font/amaticscbold"
+        android:text="ABT IMG"
+        app:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/menuBtnsLayout"
+        android:layout_width="409dp"
+        android:layout_height="603dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="127dp">
+
+        <Button
+            android:id="@+id/aboutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="About"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/affirmationsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Affirmations Corner"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/badgesBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="badges"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/communeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Commune"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/loveLanguagesBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Love Languages"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/mindSpaceBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="MindSpace"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/selfBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Self"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/shadowWorkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Shadow Work"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/sitWithMiiBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:text="Sit With Mii"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

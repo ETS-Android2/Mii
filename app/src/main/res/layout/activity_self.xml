@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.LoginActivity">
+
+    <EditText
+        android:id="@+id/sacredNameText"
+        android:layout_width="131dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/amaticscbold"
+        android:inputType="text"
+        android:text="Sacred Name"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/selfHobbiesInterests"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sacredNameText">
+
+        <TextView
+            android:id="@+id/selfBiotxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selfHobbiesInterests"
+        android:layout_width="412dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="63dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/selfPImages"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtHobbiesInterests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:gravity="center"
+            android:text="Hobbies + Interests"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="135dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests1"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests2"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests3"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="135dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests4"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests5"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="5"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests6"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="6"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="135dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests7"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="7"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests8"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="8"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/txtHobbiesInterests9"
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaticscbold"
+                            android:gravity="center"
+                            android:text="9"
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selfPImages"
+        android:layout_width="408dp"
+        android:layout_height="112dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder"
+                    android:layout_width="134dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder2"
+                    android:layout_width="126dp"
+                    android:layout_height="109dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder3"
+                    android:layout_width="145dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bttmNavView"
+        android:layout_width="410dp"
+        android:layout_height="62dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/menuBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:fontFamily="@font/amaticscbold"
+                android:text="Menu"
+                android:textSize="20sp"
+                app:backgroundTint="@color/black" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:fontFamily="@font/amaticscbold"
+                android:text="MindSpace"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:backgroundTint="@color/black" />
+        </LinearLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
