@@ -12,6 +12,7 @@
         <activity android:name=".ui.LoginActivity" android:label="@string/title_activity_login" />
         <activity android:name=".ui.MenuActivity" />
         <activity android:name=".ui.MindSpaceActivity" />
+        <activity android:name=".ui.SelfActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

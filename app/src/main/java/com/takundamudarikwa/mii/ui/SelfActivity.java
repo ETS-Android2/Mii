@@ -10,17 +10,26 @@ import com.takundamudarikwa.mii.R;
 
 public class SelfActivity  extends AppCompatActivity{
 
+    private Button menuBtn;
     private Button toMindSpace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self);
 
-        toMindSpace = (Button) findViewById(R.id.mindSpaceBtn);
-        toMindSpace.setOnClickListener(v -> startMindActivity());
+        menuBtn = findViewById(R.id.menuBtn);
+        toMindSpace = findViewById(R.id.mindSpaceBtn);
+
+        menuBtn.setOnClickListener(v -> startMenuActivity());
+        toMindSpace.setOnClickListener(v -> startMindSpaceActivity());
     }
 
-    public void startMindActivity() {
+    public void startMenuActivity() {
+        Intent intent=new Intent(this,MenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void startMindSpaceActivity() {
         Intent intent=new Intent(this,MindSpaceActivity.class);
         startActivity(intent);
         finish();

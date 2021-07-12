@@ -19,16 +19,16 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        toMindSpace = (Button) findViewById(R.id.mindSpaceBtn);
-        toSelf = (Button) findViewById(R.id.selfBtn);
-        toLoveLanguages = (Button) findViewById(R.id.loveLanguagesBtn);
+        toMindSpace = findViewById(R.id.mindSpaceBtn);
+        toSelf = findViewById(R.id.selfBtn);
+        toLoveLanguages = findViewById(R.id.loveLanguagesBtn);
 
-        toMindSpace.setOnClickListener(v -> startMindActivity());
+        toMindSpace.setOnClickListener(v -> startMindSpaceActivity());
         toSelf.setOnClickListener(v -> startSelfActivity());
         toLoveLanguages.setOnClickListener(v -> openLoveLanguages());
     }
 
-    public void startMindActivity() {
+    public void startMindSpaceActivity() {
         Intent intent=new Intent(this,MindSpaceActivity.class);
         startActivity(intent);
         finish();
