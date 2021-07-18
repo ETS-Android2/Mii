@@ -56,16 +56,18 @@ public class MindSpaceActivity extends AppCompatActivity {
             noBtn.setVisibility(View.VISIBLE);
             idkBtn.setVisibility(View.VISIBLE);
             menuBtn.setVisibility(View.VISIBLE);
+            menuBtn.setVisibility(View.VISIBLE);
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
-        },19000);
+        },17000);
 
     }
     public void startMenuActivity() {
         Intent intent=new Intent(this,MenuActivity.class);
+        String menuTriggerActivity = "activity";
+        intent.putExtra(menuTriggerActivity,"MindSpace");
         startActivity(intent);
-        finish();
     }
 
     public void printToConfirm(String btn){

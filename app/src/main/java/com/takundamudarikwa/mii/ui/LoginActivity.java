@@ -22,7 +22,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void startMenuActivity() {
         Intent intent=new Intent(this,MenuActivity.class);
+        String menuTriggerActivity = "activity";
+        intent.putExtra(menuTriggerActivity,"Login");
         startActivity(intent);
-        finish();
     }
 }

@@ -1,38 +1,36 @@
 package com.takundamudarikwa.mii.ui;
 
+import com.takundamudarikwa.mii.R;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.takundamudarikwa.mii.R;
-
-public class SelfActivity  extends AppCompatActivity{
-
+public class LoveLanguagesActivity extends AppCompatActivity {
     private Button menuBtn;
-    private Button toMindSpace;
+    private Button toLoveLanguageQuiz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self);
+        setContentView(R.layout.activity_lovelanguages);
 
         menuBtn = findViewById(R.id.menuBtn);
-        toMindSpace = findViewById(R.id.mindSpaceBtn);
+        toLoveLanguageQuiz = findViewById(R.id.btnToLoveLanguages);
 
         menuBtn.setOnClickListener(v -> startMenuActivity());
-        toMindSpace.setOnClickListener(v -> startMindSpaceActivity());
+        toLoveLanguageQuiz.setOnClickListener(v -> openLoveLanguages());
     }
 
     public void startMenuActivity() {
         Intent intent=new Intent(this,MenuActivity.class);
         String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,MenuActivity.class);
+        intent.putExtra(menuTriggerActivity,"LoveLanguages");
         startActivity(intent);
     }
-    public void startMindSpaceActivity() {
-        Intent intent=new Intent(this,MindSpaceActivity.class);
+    public void openLoveLanguages() {
+        Uri uri = Uri.parse("https://5lovelanguages.com/quizzes/love-language");
+        Intent intent=new Intent(Intent.ACTION_VIEW,uri);
         startActivity(intent);
-        finish();
     }
 }

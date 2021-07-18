@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.LoginActivity">
+
+    <TextView
+        android:id="@+id/txtLoveLanguages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/amaticscbold"
+        android:text="Love Languages"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtLoveLanguageIntro"
+        android:layout_width="392dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/amaticscregular"
+        android:text="Love Languages are an important aspect in relationship. Knowing your own love languages and how they connect with you will make it easier for you to be able to relay them to your significant other. "
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoveLanguages" />
+
+    <TextView
+        android:id="@+id/txtLoveLanguageIntro2"
+        android:layout_width="392dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/amaticscregular"
+        android:text="To find out what your love languages are, please click the button below to be redirected to an online quiz. Once you're done taking the quiz come back to the app and enter your test results."
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoveLanguageIntro" />
+
+    <Button
+        android:id="@+id/btnToLoveLanguages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/amaticscbold"
+        android:text="CLICK TO TAKE THE LOVE LANGUAGES QUIZ"
+        android:textSize="20sp"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoveLanguageIntro2"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bttmNavView"
+        android:layout_width="417dp"
+        android:layout_height="97dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/menuBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:fontFamily="@font/amaticscbold"
+                android:text="Menu"
+                android:textSize="20sp"
+                app:backgroundTint="@color/black" />
+
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
