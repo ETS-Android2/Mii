@@ -27,7 +27,7 @@ public class SelfActivity  extends AppCompatActivity{
     public void startMenuActivity() {
         Intent intent=new Intent(this,MenuActivity.class);
         String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,MenuActivity.class);
+        intent.putExtra(menuTriggerActivity,"Self");
         startActivity(intent);
     }
     public void startMindSpaceActivity() {
