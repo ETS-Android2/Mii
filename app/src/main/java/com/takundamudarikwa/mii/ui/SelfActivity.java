@@ -20,19 +20,20 @@ public class SelfActivity  extends AppCompatActivity{
         menuBtn = findViewById(R.id.menuBtn);
         toMindSpace = findViewById(R.id.mindSpaceBtn);
 
-        menuBtn.setOnClickListener(v -> startMenuActivity());
-        toMindSpace.setOnClickListener(v -> startMindSpaceActivity());
+        menuBtn.setOnClickListener(v -> startActivity("Menu"));
+        toMindSpace.setOnClickListener(v -> startActivity("MindSpace"));
     }
 
-    public void startMenuActivity() {
-        Intent intent=new Intent(this,MenuActivity.class);
-        String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,"Self");
-        startActivity(intent);
-    }
-    public void startMindSpaceActivity() {
-        Intent intent=new Intent(this,MindSpaceActivity.class);
-        startActivity(intent);
-        finish();
+    public void startActivity(String activityName) {
+        Intent intent= null;
+
+        if(activityName.equals("Menu"))intent = new Intent(this,MenuActivity.class);
+        if(activityName.equals("MindSpace"))intent = new Intent(this,MindSpaceActivity.class);
+
+        if(intent != null) {
+            String menuTriggerActivity = "activity";
+            intent.putExtra(menuTriggerActivity, "MindSpace");
+            startActivity(intent);
+        }
     }
 }

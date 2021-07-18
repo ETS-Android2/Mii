@@ -24,40 +24,36 @@ public class MenuActivity extends AppCompatActivity {
 
 
         tActivty = getIntent().getStringExtra("activity");
-        toMindSpace.setOnClickListener(v -> startMindSpaceActivity());
-        toSelf.setOnClickListener(v -> startSelfActivity());
-        toLoveLanguages.setOnClickListener(v -> startLoveLangaugesActivity());
+        toMindSpace.setOnClickListener(v -> startActivity("MindSpace"));
+        toSelf.setOnClickListener(v -> startActivity("Self"));
+        toLoveLanguages.setOnClickListener(v -> startActivity("LoveLanguages"));
         closeMenu.setOnClickListener(v -> returnToPreviousActivity(tActivty));
     }
 
-    public void startMindSpaceActivity() {
-        Intent intent=new Intent(this,MindSpaceActivity.class);
-        startActivity(intent);
-        finish();
+    //this method is for dynamically starting activities and also setting the trigger activity
+    public void startActivity(String activityName) {
+        Intent intent= null;
+
+        if(activityName.equals("LoveLangauges"))intent = new Intent(this,LoveLanguagesActivity.class);
+        if(activityName.equals("MindSpace"))intent = new Intent(this,MindSpaceActivity.class);
+        if(activityName.equals("Self"))intent = new Intent(this,SelfActivity.class);
+
+        if(intent != null) {
+            startActivity(intent);
+            finish();
+        }
     }
 
-    public void startSelfActivity() {
-        Intent intent=new Intent(this,SelfActivity.class);
-        startActivity(intent);
-    }
-
-    public void startLoveLangaugesActivity() {
-        Intent intent=new Intent(this,LoveLanguagesActivity.class);
-        startActivity(intent);
-    }
-
+    //when the close menu button is clicked we dynamically take the user back to their previous activity
     public void returnToPreviousActivity(String tActivity){
-        if(tActivity.trim().equals("Login")) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-        }else if(tActivity.trim().equals("LoveLanguages")) {
-            Intent intent = new Intent(this, LoveLanguagesActivity.class);
-            startActivity(intent);
-        }else if(tActivity.trim().equals("MindSpace")) {
-            Intent intent = new Intent(this, MindSpaceActivity.class);
-            startActivity(intent);
-        }else if(tActivity.trim().equals("Self")){
-            Intent intent=new Intent(this,SelfActivity.class);
+        Intent intent = null;
+
+        if(tActivity.trim().equals("Login"))intent = new Intent(this, LoginActivity.class);
+        if(tActivity.trim().equals("LoveLanguages")) intent = new Intent(this, LoveLanguagesActivity.class);
+        if(tActivity.trim().equals("MindSpace")) intent = new Intent(this, MindSpaceActivity.class);
+        if(tActivity.trim().equals("Self"))intent=new Intent(this,SelfActivity.class);
+
+        if(intent != null){
             startActivity(intent);
         }
     }

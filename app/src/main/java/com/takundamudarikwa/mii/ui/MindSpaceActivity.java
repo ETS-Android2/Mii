@@ -38,7 +38,7 @@ public class MindSpaceActivity extends AppCompatActivity {
         idkBtn.setVisibility(View.INVISIBLE);
         menuBtn.setVisibility(View.INVISIBLE);
 
-        menuBtn.setOnClickListener(v -> startMenuActivity());
+        menuBtn.setOnClickListener(v -> startActivity("Menu"));
 
         String[] mindSpaceTxtArray = {
                 "You're welcome here..",
@@ -60,14 +60,21 @@ public class MindSpaceActivity extends AppCompatActivity {
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
-        },17000);
+        },16500);
 
     }
-    public void startMenuActivity() {
-        Intent intent=new Intent(this,MenuActivity.class);
-        String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,"MindSpace");
-        startActivity(intent);
+    //this method is for dynamically starting activites and also setting the trigger activity
+    public void startActivity(String activityName) {
+        Intent intent= null;
+
+        if(activityName.equals("Menu"))intent = new Intent(this,MenuActivity.class);
+
+        //to avoid appending to the null object will ensure that intent is not null
+        if(intent != null) {
+            String menuTriggerActivity = "activity";
+            intent.putExtra(menuTriggerActivity, "MindSpace");
+            startActivity(intent);
+        }
     }
 
     public void printToConfirm(String btn){

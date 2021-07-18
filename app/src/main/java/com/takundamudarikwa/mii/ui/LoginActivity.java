@@ -17,13 +17,20 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         menuBtn = (Button) findViewById(R.id.menuBtn);
-        menuBtn.setOnClickListener(v -> startMenuActivity());
+        menuBtn.setOnClickListener(v -> startActivity("Menu"));
     }
 
-    public void startMenuActivity() {
-        Intent intent=new Intent(this,MenuActivity.class);
-        String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,"Login");
-        startActivity(intent);
+    //this method is for dynamically starting activities and also setting the trigger activity
+    public void startActivity(String activityName) {
+        Intent intent= null;
+
+        if(activityName.equals("Menu"))intent = new Intent(this,MenuActivity.class);
+
+        //to avoid appending to the null object will ensure that intent is not null
+        if(intent != null) {
+            String menuTriggerActivity = "activity";
+            intent.putExtra(menuTriggerActivity, "Login");
+            startActivity(intent);
+        }
     }
 }

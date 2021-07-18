@@ -18,16 +18,25 @@ public class LoveLanguagesActivity extends AppCompatActivity {
         menuBtn = findViewById(R.id.menuBtn);
         toLoveLanguageQuiz = findViewById(R.id.btnToLoveLanguages);
 
-        menuBtn.setOnClickListener(v -> startMenuActivity());
+        menuBtn.setOnClickListener(v -> startActivity("Menu"));
         toLoveLanguageQuiz.setOnClickListener(v -> openLoveLanguages());
     }
 
-    public void startMenuActivity() {
-        Intent intent=new Intent(this,MenuActivity.class);
-        String menuTriggerActivity = "activity";
-        intent.putExtra(menuTriggerActivity,"LoveLanguages");
-        startActivity(intent);
+    //this method is for dynamically starting activites and also setting the trigger activity
+    public void startActivity(String activityName) {
+        Intent intent= null;
+
+        if(activityName.equals("Menu"))intent = new Intent(this,MenuActivity.class);
+
+        if(intent != null) {
+            String menuTriggerActivity = "activity";
+            intent.putExtra(menuTriggerActivity, "LoveLanguages");
+            startActivity(intent);
+        }
     }
+
+    //redirect the user to the default device browser and opens the parsed URL
+    //might end up changing this to consume an API instead
     public void openLoveLanguages() {
         Uri uri = Uri.parse("https://5lovelanguages.com/quizzes/love-language");
         Intent intent=new Intent(Intent.ACTION_VIEW,uri);
