@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private WebView wbv;
     private ImageView gifImageView;
     private Handler handler;
+    //private File saveFile = new File(context.getFilesDir(),filename);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,4 +43,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }

@@ -20,7 +20,7 @@
         <com.tomer.fadingtextview.FadingTextView
             android:id="@+id/mindSpaceTxtVw"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
+            android:layout_height="90dp"
             android:fontFamily="@font/bilboswashcapsregular"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
