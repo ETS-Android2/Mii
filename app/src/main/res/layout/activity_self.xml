@@ -9,9 +9,11 @@
 
     <EditText
         android:id="@+id/sacredNameText"
-        android:layout_width="131dp"
-        android:layout_height="59dp"
+        android:layout_width="198dp"
+        android:layout_height="46dp"
         android:layout_marginTop="5dp"
+        android:drawableRight="@drawable/ic_baseline_edit_24"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/amaticscbold"
         android:inputType="text"
         android:text="Sacred Name"
@@ -51,7 +53,9 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:textColor="@color/white"
-            android:textColorHighlight="@color/white" />
+            android:textColorHighlight="@color/white"
+            android:drawableRight="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="5dp"/>
 
         <TextView
             android:id="@+id/txtHobbiesInterests"
@@ -61,13 +65,15 @@
             android:gravity="center"
             android:text="Hobbies + Interests"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:drawableRight="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="5dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/selfHobbiesInterests"
-        android:layout_width="413dp"
-        android:layout_height="153dp"
+        android:layout_width="411dp"
+        android:layout_height="173dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/selfPImages"
         app:layout_constraintEnd_toEndOf="parent">
