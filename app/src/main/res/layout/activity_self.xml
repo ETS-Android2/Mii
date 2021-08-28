@@ -11,7 +11,7 @@
         android:id="@+id/sacredNameText"
         android:layout_width="131dp"
         android:layout_height="59dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/amaticscbold"
         android:inputType="text"
         android:text="Sacred Name"
@@ -26,29 +26,32 @@
 
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
+        android:id="@+id/selfImage"
+        android:layout_width="411dp"
+        android:layout_height="202dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/selfHobbiesInterests"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sacredNameText">
+        app:layout_constraintTop_toBottomOf="@+id/sacredNameText"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
+            android:id="@+id/txtSelfImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaticscbold"
+            android:gravity="left"
+            android:text="SELF IMAGE"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/selfBiotxtVw"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/selfHobbiesInterests"
-        android:layout_width="412dp"
-        android:layout_height="165dp"
-        android:layout_marginBottom="63dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/selfPImages"
-        app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="140dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white" />
 
         <TextView
             android:id="@+id/txtHobbiesInterests"
@@ -59,170 +62,151 @@
             android:text="Hobbies + Interests"
             android:textColor="@color/white"
             android:textSize="30sp" />
+    </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/selfHobbiesInterests"
+        android:layout_width="413dp"
+        android:layout_height="153dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/selfPImages"
+        app:layout_constraintEnd_toEndOf="parent">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+            <EditText
+                android:id="@+id/txtHobbiesInterests1"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                    <LinearLayout
-                        android:layout_width="135dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+            <EditText
+                android:id="@+id/txtHobbiesInterests2"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests1"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="1"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+            <EditText
+                android:id="@+id/txtHobbiesInterests3"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests2"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="2"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests3"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="3"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+            <EditText
+                android:id="@+id/txtHobbiesInterests4"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                    </LinearLayout>
+            <EditText
+                android:id="@+id/txtHobbiesInterests5"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                    <LinearLayout
-                        android:layout_width="135dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+            <EditText
+                android:id="@+id/txtHobbiesInterests6"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests4"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="4"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests5"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="5"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests6"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="6"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
+            <EditText
+                android:id="@+id/txtHobbiesInterests7"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                    </LinearLayout>
+            <EditText
+                android:id="@+id/txtHobbiesInterests8"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-                    <LinearLayout
-                        android:layout_width="135dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests7"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="7"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
-
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests8"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="8"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
-
-                        <TextView
-                            android:id="@+id/txtHobbiesInterests9"
-                            android:layout_width="135dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amaticscbold"
-                            android:gravity="center"
-                            android:text="9"
-                            android:textColor="@color/white"
-                            android:textSize="30sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </TableRow>
-        </TableLayout>
+            <EditText
+                android:id="@+id/txtHobbiesInterests9"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/amaticscbold"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/selfPImages"
         android:layout_width="408dp"
         android:layout_height="112dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/imagePlaceHolder"
+            android:layout_width="134dp"
+            android:layout_height="match_parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/imagePlaceHolder2"
+            android:layout_width="126dp"
+            android:layout_height="109dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-                <ImageButton
-                    android:id="@+id/imagePlaceHolder"
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imagePlaceHolder2"
-                    android:layout_width="126dp"
-                    android:layout_height="109dp"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imagePlaceHolder3"
-                    android:layout_width="145dp"
-                    android:layout_height="match_parent"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-            </TableRow>
-        </TableLayout>
+        <ImageButton
+            android:id="@+id/imagePlaceHolder3"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
     </LinearLayout>
 

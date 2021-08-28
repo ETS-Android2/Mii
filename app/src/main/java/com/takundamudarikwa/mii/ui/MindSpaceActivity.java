@@ -60,10 +60,10 @@ public class MindSpaceActivity extends AppCompatActivity {
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
-        },16900);
+        },16500);
 
     }
-    //this method is for dynamically starting activites and also setting the trigger activity
+    //this method is for dynamically starting activities and also setting the trigger activity
     public void startActivity(String activityName) {
         Intent intent= null;
 

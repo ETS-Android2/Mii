@@ -32,7 +32,7 @@ public class SelfActivity  extends AppCompatActivity{
 
         if(intent != null) {
             String menuTriggerActivity = "activity";
-            intent.putExtra(menuTriggerActivity, "MindSpace");
+            intent.putExtra(menuTriggerActivity, "Self");
             startActivity(intent);
         }
     }
