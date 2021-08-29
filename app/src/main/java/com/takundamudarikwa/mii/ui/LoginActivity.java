@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        usersDB.open();
         // setting activity header name
         header = findViewById(R.id.appNameLabel);
 

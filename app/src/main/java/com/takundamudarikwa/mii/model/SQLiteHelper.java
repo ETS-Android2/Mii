@@ -50,11 +50,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
                 "create table users " +
-                        "(id integer primary key, given_name text, family_name text,phone text,email text)"
+                        "(id integer primary key, given_name text, family_name text,phone_number text,email text)"
         );
         db.execSQL(
                 "create table profile " +
-                        "(id integer primary key, sacredname text, selfimage text,hobbies_interest text,hobbies_interest2 text,hobbies_interest3 text,hobbies_interest4 text,hobbies_interest5 text,hobbies_interest6 text,hobbies_interest7 text,hobbies_interest8 text,hobbies_interest text9,image blob, image2 blob, image3, FOREIGN KEY(fk_users) REFERENCES users(id))"
+                        "(id integer primary key, sacredname text, selfimage text,hobbies_interest text,hobbies_interest2 text,hobbies_interest3 text,hobbies_interest4 text,hobbies_interest5 text,hobbies_interest6 text,hobbies_interest7 text,hobbies_interest8 text,hobbies_interest9 text,image blob, image2 blob, image3)"//FOREIGN KEY(fk_users) REFERENCES users(id))"
         );
     }
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {}

@@ -30,12 +30,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
 
+        usersDB.open();
         gifImageView = findViewById(id.gifImageView);
         Glide.with(this).load(drawable.miilogo).into(gifImageView);
 
         Cursor userData = usersDB.fetchUser();
-        String prevAccess = userData.getString(3);
-        System.out.println(userData.getString(3));
+        String prevAccess = "false";
+        if(userData.getCount()>2)userData.getString(3);
+        System.out.println("******** PREVACESS ************");
+        System.out.println(prevAccess);
+        System.out.println(userData);
+        System.out.println("******** PREVACESS ************");
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
