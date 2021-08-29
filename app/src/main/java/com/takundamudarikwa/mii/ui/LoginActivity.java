@@ -1,7 +1,6 @@
 package com.takundamudarikwa.mii.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +12,9 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.tabs.TabLayout;
 import com.takundamudarikwa.mii.R;
-import com.takundamudarikwa.mii.model.DBHelper;
+import com.takundamudarikwa.mii.model.DBManager;
+import com.takundamudarikwa.mii.model.SQLiteHelper;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -30,18 +29,22 @@ public class LoginActivity extends AppCompatActivity {
     private TextView email;
     private TextView phone;
 
-    private DBHelper usersDB = new DBHelper(this);
+    private DBManager usersDB = new DBManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // setting activity header name
         header = findViewById(R.id.appNameLabel);
 
+        // attaching button variables with the view buttons
         menuBtn = findViewById(R.id.menuBtn);
         saveBtn = findViewById(R.id.btnSubmitLogin);
 
+        // setting onclick listener for the menu button
+        // we pass the activity name that we want triggered by pressing the menu button
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
 
         introLayout = findViewById(R.id.introLayout);
@@ -50,18 +53,20 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.txtEmail);
         phone = findViewById(R.id.txtPhone);
 
+        // onclick listener for the save button
+        // we also pass all relevant information for saving a new user
         saveBtn.setOnClickListener(v -> saveNewUser(givenName.getText(),familyName.getText(),email.getText(),phone.getText(),header,introLayout,saveBtn,menuBtn));
 
     }
 
-    //this method is for dynamically starting activities and also setting the trigger activity
+    // this method is for dynamically starting activities and also setting the trigger activity
     public void startActivity(String activityName) {
         Intent intent= null;
-
+        // we append the necessary activity based on the activityName
         if(activityName.equals("Menu"))intent = new Intent(this,MenuActivity.class);
         if(activityName.equals("MindSpace"))intent = new Intent(this,MindSpaceActivity.class);
 
-        //to avoid appending to the null object will ensure that intent is not null
+        // to avoid appending to the null object will ensure that intent is not null
         if(intent != null) {
             String menuTriggerActivity = "activity";
             intent.putExtra(menuTriggerActivity, "Login");
@@ -70,10 +75,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void saveNewUser(CharSequence givenName, CharSequence familyName, CharSequence email, CharSequence phone, TextView header, TableLayout introLayout, Button saveBtn, Button menuBtn){
+        // validating user input
+        // this returns true if all the input is valid
+        // if not, it returns a string text informing the user on what to do
         String valid = validateInput(givenName,familyName,email,phone);
         // todo cache database user creation response in order to use that for future user app access
         if(valid == "True"){
-            String createdNewUser =  usersDB.createNewUser(givenName.toString(),familyName.toString(), email.toString(), phone.toString());
+            String createdNewUser =  usersDB.insertintoUsers(givenName.toString(),familyName.toString(), email.toString(), phone.toString());
             toastMessages(createdNewUser);
             takingYouToMindSpace(introLayout,saveBtn,header,menuBtn);
         }else{
@@ -82,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public String validateInput(CharSequence  giveName, CharSequence  lastName, CharSequence email, CharSequence phone){
+        // checking if user input is not and empty and if it meets expected formats
         if(giveName.toString().isEmpty() || lastName.toString().isEmpty() || email.toString().isEmpty() || phone.toString().isEmpty()){
             return "Please make sure you've entered all the fields";
         }else if(Patterns.EMAIL_ADDRESS.matcher(email).matches() == false || Patterns.PHONE.matcher(phone).matches() == false){
@@ -94,9 +103,9 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
 
+    // rather than leaving a user wondering what is happening, this smoothens the transition between activities
     public void takingYouToMindSpace(TableLayout introLayout, Button saveBtn, TextView header, Button menuBtn){
         header.setText(" .. to Mindspace ..");
-        //header.setPadding(0,50,0,0);
         header.setHeight(1550);
         introLayout.setVisibility(View.INVISIBLE);
         saveBtn.setVisibility(View.INVISIBLE);

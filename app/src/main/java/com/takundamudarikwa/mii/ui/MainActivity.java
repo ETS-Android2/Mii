@@ -3,6 +3,7 @@ package com.takundamudarikwa.mii.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.takundamudarikwa.mii.R;
+import com.takundamudarikwa.mii.model.DBManager;
 
 import kotlinx.coroutines.android.HandlerDispatcher;
 
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private WebView wbv;
     private ImageView gifImageView;
     private Handler handler;
+
+    private DBManager usersDB = new DBManager(this);
     //private File saveFile = new File(context.getFilesDir(),filename);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +33,34 @@ public class MainActivity extends AppCompatActivity {
         gifImageView = findViewById(id.gifImageView);
         Glide.with(this).load(drawable.miilogo).into(gifImageView);
 
+        Cursor userData = usersDB.fetchUser();
+        String prevAccess = userData.getString(3);
+        System.out.println(userData.getString(3));
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startLoginActivity();
+                if(prevAccess == "True"){
+                    startActivity("MindSpace");
+
+                }else{
+                    startActivity("Login");
+                }
             }
         },3000);
     }
 
-    public void startLoginActivity() {
-        Intent intent=new Intent(this,LoginActivity.class);
-        startActivity(intent);
-        finish();
+    // dynamically starting activities and also setting the trigger activity
+    public void startActivity(String activityName) {
+        Intent intent= null;
+        if(activityName.equals("MindSpace"))intent = new Intent(this,MindSpaceActivity.class);
+        if(activityName.equals("Login"))intent = new Intent(this,LoginActivity.class);
+
+        if(intent != null) {
+            startActivity(intent);
+            finish();
+        }
     }
+
 
 }

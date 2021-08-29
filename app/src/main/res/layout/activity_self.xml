@@ -2,219 +2,245 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/selfLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".ui.LoginActivity">
 
     <EditText
-        android:id="@+id/sacredNameText"
+        android:id="@+id/sacredNameTxt"
         android:layout_width="198dp"
-        android:layout_height="46dp"
+        android:layout_height="61dp"
         android:layout_marginTop="5dp"
-        android:drawableRight="@drawable/ic_baseline_edit_24"
-        android:drawablePadding="5dp"
         android:fontFamily="@font/amaticscbold"
+        android:hint="@string/self_image_hint"
         android:inputType="text"
-        android:text="Sacred Name"
+        android:text="@string/sacred_name"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
         android:textSize="34sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <LinearLayout
-        android:id="@+id/selfImage"
-        android:layout_width="411dp"
-        android:layout_height="202dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/selfHobbiesInterests"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sacredNameText"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/txtSelfImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaticscbold"
-            android:gravity="left"
-            android:text="SELF IMAGE"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/selfBiotxtVw"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:drawableRight="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="5dp"/>
-
-        <TextView
-            android:id="@+id/txtHobbiesInterests"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaticscbold"
-            android:gravity="center"
-            android:text="Hobbies + Interests"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:drawableRight="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="5dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/selfHobbiesInterests"
-        android:layout_width="411dp"
-        android:layout_height="173dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/selfPImages"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests1"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests2"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="2"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests3"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="3"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests4"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="4"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests5"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests6"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="6"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests7"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="7"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests8"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="8"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/txtHobbiesInterests9"
-                android:layout_width="135dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/amaticscbold"
-                android:gravity="center"
-                android:text="9"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/selfPImages"
-        android:layout_width="408dp"
-        android:layout_height="112dp"
-        android:orientation="horizontal"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="412dp"
+        android:layout_height="521dp"
         app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/imagePlaceHolder"
-            android:layout_width="134dp"
-            android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/imagePlaceHolder2"
-            android:layout_width="126dp"
-            android:layout_height="109dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            <LinearLayout
+                android:id="@+id/selfImage"
+                android:layout_width="match_parent"
+                android:layout_height="227dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/selfHobbiesInterests"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sacredNameText"
+                app:layout_constraintVertical_bias="0.0">
 
-        <ImageButton
-            android:id="@+id/imagePlaceHolder3"
-            android:layout_width="145dp"
-            android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+                <TextView
+                    android:id="@+id/txtSelfImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaticscbold"
+                    android:gravity="center"
+                    android:hint="@string/self_image_hint"
+                    android:text="@string/self_image"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/selfBiotxtVw"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/white" />
+
+                <TextView
+                    android:id="@+id/txtHobbiesInterests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaticscbold"
+                    android:gravity="center"
+                    android:hint="@string/hobbies_interests_hint"
+                    android:text="@string/hobbies_interests"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/selfHobbiesInterests"
+                android:layout_width="match_parent"
+                android:layout_height="193dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/selfPImages"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests1"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:inputType="textAutoCorrect"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests2"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests3"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests4"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests5"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests6"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests7"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests8"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/txtHobbiesInterests9"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/amaticscbold"
+                        android:gravity="center"
+                        android:text="@string/hobbies_interests_placeholder"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/selfPImages"
+                android:layout_width="408dp"
+                android:layout_height="112dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder"
+                    android:layout_width="134dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder2"
+                    android:layout_width="126dp"
+                    android:layout_height="109dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imagePlaceHolder3"
+                    android:layout_width="145dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/editBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:fontFamily="@font/amaticscbold"
+                android:text="@string/self_edit"
+                android:textSize="20sp"
+                app:backgroundTint="@color/black" />
+        </TableLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bttmNavView"
@@ -237,7 +263,7 @@
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fontFamily="@font/amaticscbold"
-                android:text="Menu"
+                android:text="@string/menu"
                 android:textSize="20sp"
                 app:backgroundTint="@color/black" />
 
@@ -248,7 +274,7 @@
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fontFamily="@font/amaticscbold"
-                android:text="MindSpace"
+                android:text="@string/menu_mindspace"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:backgroundTint="@color/black" />
