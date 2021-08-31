@@ -31,6 +31,9 @@ public class DBManager {
         contentValue.put(SQLiteHelper.USERS_COLUMN_FAMILYNAME, familyName);
         contentValue.put(SQLiteHelper.USERS_COLUMN_EMAIL, email);
         contentValue.put(SQLiteHelper.USERS_COLUMN_PHONENUMBER, phone);
+        contentValue.put(SQLiteHelper.USERS_PREV_ACCESS,"true");
+        contentValue.put(SQLiteHelper.USERS_MINDSPACE_PREV_ACCESS,"true");
+
         long dbInsert = this.database.insert(SQLiteHelper.USERS_TABLE_NAME, null, contentValue);
 
         if (dbInsert != -1) {
@@ -64,7 +67,7 @@ public class DBManager {
 
 
     public Cursor fetchUser() {
-        Cursor cursor = this.database.query(SQLiteHelper.USERS_TABLE_NAME, new String[]{SQLiteHelper.USERS_COLUMN_ID, SQLiteHelper.USERS_COLUMN_EMAIL, SQLiteHelper.USERS_PREV_ACCESS}, null, null, null, null, null);
+        Cursor cursor = this.database.query(SQLiteHelper.USERS_TABLE_NAME, new String[]{SQLiteHelper.USERS_COLUMN_ID, SQLiteHelper.USERS_COLUMN_EMAIL, SQLiteHelper.USERS_PREV_ACCESS , SQLiteHelper.USERS_MINDSPACE_PREV_ACCESS}, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

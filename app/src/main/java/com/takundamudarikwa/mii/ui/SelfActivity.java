@@ -34,6 +34,8 @@ public class SelfActivity  extends AppCompatActivity{
         toMindSpace = findViewById(R.id.mindSpaceBtn);
         editBtn = findViewById(R.id.editBtn);
 
+        // creating instances of all the fields that the user may enter data into
+        // todo I have to grab that database values to set the the fields with the saved if not empty. Might do it on line 50
         sacredName = findViewById(R.id.sacredNameTxt);
         selfImage = findViewById(R.id.selfBiotxtVw);
         handI1 = findViewById(R.id.txtHobbiesInterests1);
@@ -46,12 +48,14 @@ public class SelfActivity  extends AppCompatActivity{
         handI8 = findViewById(R.id.txtHobbiesInterests8);
         handI9 = findViewById(R.id.txtHobbiesInterests9);
 
-        EditText[] editTextsArray = { sacredName, selfImage,handI1, handI2, handI3, handI4, handI5, handI6, handI7, handI8, handI9};
+        EditText[] editTextsArray = {sacredName, selfImage,handI1, handI2, handI3, handI4, handI5, handI6, handI7, handI8, handI9};
 
+        // iterating over all the editable elements to make the uneditable
         for( int i=0; i < editTextsArray.length; i++){
             makeUneditable(editTextsArray[i],false);
         }
 
+        // setting onclicklisteners for our buttons
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
         toMindSpace.setOnClickListener(v -> startActivity("MindSpace"));
         editBtn.setOnClickListener(v -> editMode(editTextsArray,editBtn));
@@ -70,6 +74,7 @@ public class SelfActivity  extends AppCompatActivity{
         }
     }
 
+    // edit mode configurations
     public void editMode(EditText[] editTextsArray , Button editBtn){
         System.out.println(editBtn.getText());
         if (editBtn.getText().toString().equals("Edit")){

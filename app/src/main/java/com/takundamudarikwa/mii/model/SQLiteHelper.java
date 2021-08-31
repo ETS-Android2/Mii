@@ -16,7 +16,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String USERS_COLUMN_FAMILYNAME = "family_name";
     public static final String USERS_COLUMN_EMAIL = "email";
     public static final String USERS_COLUMN_PHONENUMBER = "phone_number";
-    public static final String USERS_PREV_ACCESS = "false";
+    public static final String USERS_PREV_ACCESS = "prev_access";
+    public static final String USERS_MINDSPACE_PREV_ACCESS = "mindspace_prev_access";
 
     public static final String PROFILE_TABLE_NAME = "profile";
     public static final String PROFILE_COLUMN_ID = "id";
@@ -36,12 +37,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String PROFILE_COLUMN_IMAGE3= "image3";
     public static final String PROFILE_FOREIGN_KEY= "fk_users";
 
-    public static final String SQL_CREATE_USERS =
-            "create table users " +
-            "(id integer primary key, given_name text, family_name text,phone text,email text)";
-
-    /*public static final String SQL_CREATE_PROFILE =*/
-
     public SQLiteHelper(Context context){
         super(context,DATABASE_NAME,null,1);
     }
@@ -50,7 +45,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
                 "create table users " +
-                        "(id integer primary key, given_name text, family_name text,phone_number text,email text)"
+                        "(id integer primary key, given_name text, family_name text,phone_number text,email text,prev_access text,mindspace_prev_access text)"
         );
         db.execSQL(
                 "create table profile " +

@@ -24,30 +24,32 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler;
 
     private DBManager usersDB = new DBManager(this);
+    private String prevAccess = "false";
+    private String mindSpacePrevAccess = "false";
+
     //private File saveFile = new File(context.getFilesDir(),filename);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
-
+        // open database
         usersDB.open();
+
+        // loading the gif icon
         gifImageView = findViewById(id.gifImageView);
         Glide.with(this).load(drawable.miilogo).into(gifImageView);
 
+        // fetching userData if
         Cursor userData = usersDB.fetchUser();
-        String prevAccess = "false";
-        if(userData.getCount()>2)userData.getString(3);
-        System.out.println("******** PREVACESS ************");
-        System.out.println(prevAccess);
-        System.out.println(userData);
-        System.out.println("******** PREVACESS ************");
+        if(userData.moveToFirst()) prevAccess = userData.getString(userData.getColumnIndex("prev_access"));
+        if(userData.moveToFirst()) mindSpacePrevAccess = userData.getString(userData.getColumnIndex("mindspace_prev_access"));
+        userData.close();
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(prevAccess == "True"){
+                if(prevAccess.equals("true")){
                     startActivity("MindSpace");
-
                 }else{
                     startActivity("Login");
                 }
@@ -62,8 +64,15 @@ public class MainActivity extends AppCompatActivity {
         if(activityName.equals("Login"))intent = new Intent(this,LoginActivity.class);
 
         if(intent != null) {
-            startActivity(intent);
-            finish();
+            if(mindSpacePrevAccess.equals("true")){
+                String mindspaceprevacccess = "mindSpacePrevAccess";
+                intent.putExtra(mindspaceprevacccess, "true");
+                startActivity(intent);
+                finish();
+            }else{
+                startActivity(intent);
+                finish();
+            }
         }
     }
 

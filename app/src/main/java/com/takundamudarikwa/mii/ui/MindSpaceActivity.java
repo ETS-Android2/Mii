@@ -19,6 +19,8 @@ public class MindSpaceActivity extends AppCompatActivity {
     private Button menuBtn;
     private Handler handler;
     private int counter = 0;
+    private String mindSpacePrevAccess = "false";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +42,21 @@ public class MindSpaceActivity extends AppCompatActivity {
 
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
 
-        String[] mindSpaceTxtArray = {
-                "You're welcome here..",
-                "This is a space for you..",
-                "This is a space for your mind..",
-                "Are You Happy?"
-        };
+        // to get the previously accessed activity we grab the set value in the getIntent()
+        mindSpacePrevAccess = getIntent().getStringExtra("mindSpacePrevAccess");
+        String[] mindSpaceTxtArray = {};
+        int timeOut = 5100;
+        int timeOut2 = 16500;
+
+        if(mindSpacePrevAccess.equals("true")) mindSpaceTxtArray = new String[]{"Are You Happy?"};
+        if(mindSpacePrevAccess.equals("false")) mindSpaceTxtArray = new String[]{"You're welcome here..", "This is a space for you..", "This is a space for your mind..", "Are You Happy?"};
+
+        if(mindSpaceTxtArray.length == 1) timeOut = 6000;
+        if(mindSpaceTxtArray.length == 1) timeOut2 = timeOut;
 
         mindSpaceTxtView = findViewById(R.id.mindSpaceTxtVw);
         mindSpaceTxtView.setTexts(mindSpaceTxtArray);
-        mindSpaceTxtView.setTimeout(5000,FadingTextView.MILLISECONDS);
+        mindSpaceTxtView.setTimeout(timeOut,FadingTextView.MILLISECONDS);
         handler=new Handler();
         handler.postDelayed(() -> {
             yesBtn.setVisibility(View.VISIBLE);
@@ -60,7 +67,7 @@ public class MindSpaceActivity extends AppCompatActivity {
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
-        },16500);
+        },timeOut2);
 
     }
     //this method is for dynamically starting activities and also setting the trigger activity
