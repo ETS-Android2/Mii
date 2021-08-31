@@ -19,8 +19,7 @@ public class MindSpaceActivity extends AppCompatActivity {
     private Button menuBtn;
     private Handler handler;
     private int counter = 0;
-    private String mindSpacePrevAccess = "false";
-
+    private Button[] btns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,39 +34,28 @@ public class MindSpaceActivity extends AppCompatActivity {
         noBtn.setOnClickListener(v -> printToConfirm("NO")); // todo: if its the user's first time and they press NO they should be taken to a page with general uplifting message ELSE they're redirected to the previously recorded messages
         idkBtn.setOnClickListener(v -> printToConfirm("I DON'T KNOW")); // todo: redirects to the Confirmation Corner
 
-        yesBtn.setVisibility(View.INVISIBLE);
-        noBtn.setVisibility(View.INVISIBLE);
-        idkBtn.setVisibility(View.INVISIBLE);
-        menuBtn.setVisibility(View.INVISIBLE);
+        btns = new Buttons[]{yesBtn,noBtn,idkBtn,menuBtn};
+        setVisibility(btns,"invisible");
 
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
 
-        // to get the previously accessed activity we grab the set value in the getIntent()
-        mindSpacePrevAccess = getIntent().getStringExtra("mindSpacePrevAccess");
-        String[] mindSpaceTxtArray = {};
-        int timeOut = 5100;
-        int timeOut2 = 16500;
-
-        if(mindSpacePrevAccess.equals("true")) mindSpaceTxtArray = new String[]{"Are You Happy?"};
-        if(mindSpacePrevAccess.equals("false")) mindSpaceTxtArray = new String[]{"You're welcome here..", "This is a space for you..", "This is a space for your mind..", "Are You Happy?"};
-
-        if(mindSpaceTxtArray.length == 1) timeOut = 6000;
-        if(mindSpaceTxtArray.length == 1) timeOut2 = timeOut;
+        String[] mindSpaceTxtArray = {
+                "You're welcome here..",
+                "This is a space for you..",
+                "This is a space for your mind..",
+                "Are You Happy?"
+        };
 
         mindSpaceTxtView = findViewById(R.id.mindSpaceTxtVw);
         mindSpaceTxtView.setTexts(mindSpaceTxtArray);
-        mindSpaceTxtView.setTimeout(timeOut,FadingTextView.MILLISECONDS);
+        mindSpaceTxtView.setTimeout(5000,FadingTextView.MILLISECONDS);
         handler=new Handler();
         handler.postDelayed(() -> {
-            yesBtn.setVisibility(View.VISIBLE);
-            noBtn.setVisibility(View.VISIBLE);
-            idkBtn.setVisibility(View.VISIBLE);
-            menuBtn.setVisibility(View.VISIBLE);
-            menuBtn.setVisibility(View.VISIBLE);
+            setVisibility(btns,"visible");
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
-        },timeOut2);
+        },16500);
 
     }
     //this method is for dynamically starting activities and also setting the trigger activity
@@ -84,6 +72,16 @@ public class MindSpaceActivity extends AppCompatActivity {
         }
     }
 
+    public void setVisibility(Button[] btns, String visibility){
+        for(int i=0;i < btns.length; i++){
+            if(visibility == "visible"){
+                btns[i].setVisibility(View.VISIBLE);
+            }else{
+                btns[i].setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+    
     public void printToConfirm(String btn){
         System.out.println("You clicked the "+btn+" button");
     }
