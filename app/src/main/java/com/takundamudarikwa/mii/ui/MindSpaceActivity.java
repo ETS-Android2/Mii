@@ -34,7 +34,7 @@ public class MindSpaceActivity extends AppCompatActivity {
         noBtn.setOnClickListener(v -> printToConfirm("NO")); // todo: if its the user's first time and they press NO they should be taken to a page with general uplifting message ELSE they're redirected to the previously recorded messages
         idkBtn.setOnClickListener(v -> printToConfirm("I DON'T KNOW")); // todo: redirects to the Confirmation Corner
 
-        btns = new Buttons[]{yesBtn,noBtn,idkBtn,menuBtn};
+        btns = new Button[]{yesBtn,noBtn,idkBtn,menuBtn};
         setVisibility(btns,"invisible");
 
         menuBtn.setOnClickListener(v -> startActivity("Menu"));

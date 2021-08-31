@@ -71,9 +71,4 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             return "Sorry there was an error saving your information";
         }
     }
-
-    public String SaveProfile(String sacredName, String selfImage,String handb,String handb2,String handb3,String handb4,String handb5,String handb6,String handb7,String handb8,String handb9){
-
-        return "";
-    }
 }
