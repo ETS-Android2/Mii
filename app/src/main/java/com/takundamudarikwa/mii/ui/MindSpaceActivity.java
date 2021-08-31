@@ -19,6 +19,7 @@ public class MindSpaceActivity extends AppCompatActivity {
     private Button menuBtn;
     private Handler handler;
     private int counter = 0;
+    private Button[] btns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +34,8 @@ public class MindSpaceActivity extends AppCompatActivity {
         noBtn.setOnClickListener(v -> printToConfirm("NO")); // todo: if its the user's first time and they press NO they should be taken to a page with general uplifting message ELSE they're redirected to the previously recorded messages
         idkBtn.setOnClickListener(v -> printToConfirm("I DON'T KNOW")); // todo: redirects to the Confirmation Corner
 
-        yesBtn.setVisibility(View.INVISIBLE);
-        noBtn.setVisibility(View.INVISIBLE);
-        idkBtn.setVisibility(View.INVISIBLE);
-        menuBtn.setVisibility(View.INVISIBLE);
+        btns = new Buttons[]{yesBtn,noBtn,idkBtn,menuBtn};
+        setVisibility(btns,"invisible");
 
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
 
@@ -52,11 +51,7 @@ public class MindSpaceActivity extends AppCompatActivity {
         mindSpaceTxtView.setTimeout(5000,FadingTextView.MILLISECONDS);
         handler=new Handler();
         handler.postDelayed(() -> {
-            yesBtn.setVisibility(View.VISIBLE);
-            noBtn.setVisibility(View.VISIBLE);
-            idkBtn.setVisibility(View.VISIBLE);
-            menuBtn.setVisibility(View.VISIBLE);
-            menuBtn.setVisibility(View.VISIBLE);
+            setVisibility(btns,"visible");
 
             mindSpaceTxtView.stop();
             mindSpaceTxtView.setVisibility(View.INVISIBLE);
@@ -77,6 +72,16 @@ public class MindSpaceActivity extends AppCompatActivity {
         }
     }
 
+    public void setVisibility(Button[] btns, String visibility){
+        for(int i=0;i < btns.length; i++){
+            if(visibility == "visible"){
+                btns[i].setVisibility(View.VISIBLE);
+            }else{
+                btns[i].setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+    
     public void printToConfirm(String btn){
         System.out.println("You clicked the "+btn+" button");
     }
