@@ -2,8 +2,11 @@ package com.takundamudarikwa.mii.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,9 @@ public class SelfActivity  extends AppCompatActivity{
     private Button menuBtn;
     private Button toMindSpace;
     private Button editBtn;
+    private Button uploadImg1;
+    private Button uploadImg2;
+    private Button uploadImg3;
     private EditText sacredName;
     private EditText selfImage;
     private EditText handI1;
@@ -25,6 +31,11 @@ public class SelfActivity  extends AppCompatActivity{
     private EditText handI7;
     private EditText handI8;
     private EditText handI9;
+    private ImageButton imageBtn1;
+    private ImageButton imageBtn2;
+    private ImageButton imageBtn3;
+    private LinearLayout uploadImgsLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +58,13 @@ public class SelfActivity  extends AppCompatActivity{
         handI7 = findViewById(R.id.txtHobbiesInterests7);
         handI8 = findViewById(R.id.txtHobbiesInterests8);
         handI9 = findViewById(R.id.txtHobbiesInterests9);
+        imageBtn1 = findViewById(R.id.imagePlaceHolder);
+        imageBtn2 = findViewById(R.id.imagePlaceHolder2);
+        imageBtn3 = findViewById(R.id.imagePlaceHolder3);
+        uploadImgsLayout = findViewById(R.id.selfPUploadImages);
+        uploadImg1 = findViewById(R.id.uploadBtn1);
+        uploadImg2 = findViewById(R.id.uploadBtn2);
+        uploadImg3 = findViewById(R.id.uploadBtn3);
 
         EditText[] editTextsArray = {sacredName, selfImage,handI1, handI2, handI3, handI4, handI5, handI6, handI7, handI8, handI9};
 
@@ -76,7 +94,6 @@ public class SelfActivity  extends AppCompatActivity{
 
     // edit mode configurations
     public void editMode(EditText[] editTextsArray , Button editBtn){
-        System.out.println(editBtn.getText());
         if (editBtn.getText().toString().equals("Edit")){
             editBtn.setText("Save");
             for( int i=0; i < editTextsArray.length; i++){
@@ -84,16 +101,24 @@ public class SelfActivity  extends AppCompatActivity{
                 editTextsArray[i].setCompoundDrawablesWithIntrinsicBounds(0, 0,R.drawable.ic_baseline_edit_24, 0);
                 editTextsArray[i].setCompoundDrawablePadding(5);
             }
+            uploadImgsLayout.setVisibility(View.VISIBLE);
+            uploadImg1.setVisibility(View.VISIBLE);
+            uploadImg2.setVisibility(View.VISIBLE);
+            uploadImg3.setVisibility(View.VISIBLE);
         }else if(editBtn.getText().toString().equals("Save")){
             editBtn.setText("Edit");
             for( int i=0; i < editTextsArray.length; i++){
                 makeUneditable(editTextsArray[i],false);
                 editTextsArray[i].setCompoundDrawablesWithIntrinsicBounds(0, 0,0, 0);
             }
+            uploadImgsLayout.setVisibility(View.INVISIBLE);
+            uploadImg1.setVisibility(View.INVISIBLE);
+            uploadImg2.setVisibility(View.INVISIBLE);
+            uploadImg3.setVisibility(View.INVISIBLE);
         }
-
     }
 
+    public void getImages(){};
     public void makeUneditable(EditText e, Boolean setChoice){
         e.setEnabled(setChoice);
     }
