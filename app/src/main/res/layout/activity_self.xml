@@ -206,7 +206,7 @@
                 android:layout_width="408dp"
                 android:layout_height="112dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+                app:layout_constraintBottom_toTopOf="@+id/selfPUploadImages"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageButton
@@ -234,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+                app:layout_constraintBottom_toTopOf="@+id/selfEditBtns"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <Button
@@ -264,16 +264,40 @@
                     android:text="@string/upload_image"
                     android:visibility="invisible" />
             </LinearLayout>
-            <Button
-                android:id="@+id/editBtn"
+
+            <LinearLayout
+                android:id="@+id/selfEditBtns"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/black"
-                android:fontFamily="@font/amaticscbold"
-                android:text="@string/self_edit"
-                android:textSize="20sp"
-                app:backgroundTint="@color/black" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/bttmNavView"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/cancelEditBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:fontFamily="@font/amaticscbold"
+                    android:text="@string/cancel_edit"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:backgroundTint="@color/black" />
+
+                <Button
+                    android:id="@+id/editBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:fontFamily="@font/amaticscbold"
+                    android:text="@string/self_edit"
+                    android:textSize="20sp"
+                    app:backgroundTint="@color/black" />
+
+            </LinearLayout>
         </TableLayout>
 
     </ScrollView>

@@ -8,7 +8,29 @@
     android:paddingTop="100dp"
     tools:context=".ui.MindSpaceActivity">
 
+    <TextView
+        android:id="@+id/sacredNameTxt"
+        android:layout_width="198dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="9dp"
+        android:fontFamily="@font/amaticscbold"
+        android:gravity="center"
+        android:hint="@string/self_image_hint"
+        android:text="@string/recording_title"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="349dp"
         android:orientation="vertical"
@@ -17,18 +39,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.tomer.fadingtextview.FadingTextView
-            android:id="@+id/mindSpaceTxtVw"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:fontFamily="@font/bilboswashcapsregular"
-            android:gravity="center"
-            android:paddingTop="60dp"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            app:texts="@array/examples"/>
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/recordAudio"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:width="110dip"
+                android:background="@color/black"
+                android:fontFamily="@font/bilboswashcapsregular"
+                android:maxWidth="120dip"
+                android:minWidth="100dip"
+                android:text="@string/record_video"
+                android:textSize="34sp"
+                app:backgroundTint="@color/black" />
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
@@ -36,43 +65,16 @@
             android:paddingTop="10dp">
 
             <Button
-                android:id="@+id/yesBtn"
+                android:id="@+id/recordVideo"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="217dp"
-                android:layout_height="100dp"
-                android:width="110dip"
-                android:background="@color/black"
-                android:fontFamily="@font/bilboswashcapsregular"
-                android:maxWidth="120dip"
-                android:minWidth="100dip"
-                android:text="@string/yes"
-                android:textSize="34sp"
-                app:backgroundTint="@color/black" />
-
-            <Button
-                android:id="@+id/noBtn"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="193dp"
+                android:layout_width="370dp"
                 android:layout_height="100dp"
                 android:fontFamily="@font/bilboswashcapsregular"
-                android:text="@string/no"
+                android:text="@string/record_audio"
                 android:textSize="34sp"
                 app:backgroundTint="@color/black" />
 
         </TableRow>
-
-        <Button
-            android:id="@+id/idkBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
-            android:fontFamily="@font/bilboswashcapsregular"
-            android:paddingLeft="16dp"
-            android:paddingTop="10dp"
-            android:paddingRight="16dp"
-            android:text="@string/i_don_t_know"
-            android:textSize="34sp"
-            app:backgroundTint="@color/black" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

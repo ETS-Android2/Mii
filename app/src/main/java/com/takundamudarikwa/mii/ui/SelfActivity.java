@@ -1,14 +1,19 @@
 package com.takundamudarikwa.mii.ui;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.takundamudarikwa.mii.R;
 
@@ -17,6 +22,7 @@ public class SelfActivity  extends AppCompatActivity{
     private Button menuBtn;
     private Button toMindSpace;
     private Button editBtn;
+    private Button cancelBtn;
     private Button uploadImg1;
     private Button uploadImg2;
     private Button uploadImg3;
@@ -44,6 +50,7 @@ public class SelfActivity  extends AppCompatActivity{
         menuBtn = findViewById(R.id.menuBtn);
         toMindSpace = findViewById(R.id.mindSpaceBtn);
         editBtn = findViewById(R.id.editBtn);
+        cancelBtn = findViewById(R.id.cancelEditBtn);
 
         // creating instances of all the fields that the user may enter data into
         // todo I have to grab that database values to set the the fields with the saved if not empty. Might do it on line 50
@@ -67,6 +74,7 @@ public class SelfActivity  extends AppCompatActivity{
         uploadImg3 = findViewById(R.id.uploadBtn3);
 
         EditText[] editTextsArray = {sacredName, selfImage,handI1, handI2, handI3, handI4, handI5, handI6, handI7, handI8, handI9};
+        Button[] editBtns = {editBtn,cancelBtn};
 
         // iterating over all the editable elements to make the uneditable
         for( int i=0; i < editTextsArray.length; i++){
@@ -76,7 +84,8 @@ public class SelfActivity  extends AppCompatActivity{
         // setting onclicklisteners for our buttons
         menuBtn.setOnClickListener(v -> startActivity("Menu"));
         toMindSpace.setOnClickListener(v -> startActivity("MindSpace"));
-        editBtn.setOnClickListener(v -> editMode(editTextsArray,editBtn));
+        editBtn.setOnClickListener(v -> editMode(editTextsArray,editBtns));
+        cancelBtn.setOnClickListener(v -> exitEditMode(editTextsArray,editBtns));
     }
 
     public void startActivity(String activityName) {
@@ -93,9 +102,10 @@ public class SelfActivity  extends AppCompatActivity{
     }
 
     // edit mode configurations
-    public void editMode(EditText[] editTextsArray , Button editBtn){
-        if (editBtn.getText().toString().equals("Edit")){
-            editBtn.setText("Save");
+    public void editMode(EditText[] editTextsArray , Button[] editBtns){
+        if (editBtns[0].getText().toString().equals("Edit")){
+            editBtns[0].setText("Save");
+            editBtns[1].setVisibility(View.VISIBLE);
             for( int i=0; i < editTextsArray.length; i++){
                 makeUneditable(editTextsArray[i],true);
                 editTextsArray[i].setCompoundDrawablesWithIntrinsicBounds(0, 0,R.drawable.ic_baseline_edit_24, 0);
@@ -105,8 +115,9 @@ public class SelfActivity  extends AppCompatActivity{
             uploadImg1.setVisibility(View.VISIBLE);
             uploadImg2.setVisibility(View.VISIBLE);
             uploadImg3.setVisibility(View.VISIBLE);
-        }else if(editBtn.getText().toString().equals("Save")){
-            editBtn.setText("Edit");
+        }else if(editBtns[0].getText().toString().equals("Save")){
+            editBtns[0].setText("Edit");
+            editBtns[1].setVisibility(View.INVISIBLE);
             for( int i=0; i < editTextsArray.length; i++){
                 makeUneditable(editTextsArray[i],false);
                 editTextsArray[i].setCompoundDrawablesWithIntrinsicBounds(0, 0,0, 0);
@@ -118,6 +129,10 @@ public class SelfActivity  extends AppCompatActivity{
         }
     }
 
+    public void exitEditMode(EditText[] editTextsArray, Button[] editBtns){
+        //simply call our editMode to exit edit mode
+        editMode(editTextsArray,editBtns);
+    }
     public void getImages(){};
     public void makeUneditable(EditText e, Boolean setChoice){
         e.setEnabled(setChoice);

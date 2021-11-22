@@ -80,7 +80,7 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
-    // we dont not have all our menu buttons linked to activities yet.
+    // we don't not have all our menu buttons linked to activities yet.
     // till then we can use this method to to gray them out and display a message to let the user know of our future intent
     public void notYetActive(Button b){
         b.setTextColor(getResources().getColor(R.color.lightgray));

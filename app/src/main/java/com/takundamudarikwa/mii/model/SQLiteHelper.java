@@ -53,22 +53,4 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         );
     }
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {}
-
-    public String createNewUser(String givenName, String familyName, String email, String phone) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("given_name", givenName);
-        contentValues.put("family_name", familyName);
-        contentValues.put("email", email);
-        contentValues.put("phone", phone);
-        contentValues.put("prev_access","true");
-
-        long dbInsert = db.insert("users", null, contentValues);
-
-        if (dbInsert != -1) {
-            return "New user created successfully";
-        } else {
-            return "Sorry there was an error saving your information";
-        }
-    }
 }
